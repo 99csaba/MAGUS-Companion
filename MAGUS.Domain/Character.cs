@@ -26,7 +26,9 @@ namespace MAGUS.Domain
         public int AktFp { get; private set; }
         public int Experiece { get; private set; }
         public ObservableCollection<Weapon> Weapons { get; private set; } = new ObservableCollection<Weapon>();
-        //public Weapon SelectedWeapon { get; }
+        public ObservableCollection<Items> Items { get; private set; } = new ObservableCollection<Items>();
+        public ObservableCollection<Shield> Shields { get; private set; } = new ObservableCollection<Shield>();
+        public ObservableCollection<Armor> Armors { get; private set; } = new ObservableCollection<Armor>();
 
         public Character(string name, int level, CharacherClass kaszt,
             int ero, int ugy, int gyors, int allo, int egesz, int szep, int intel, int akar, int aszt,
@@ -60,12 +62,24 @@ namespace MAGUS.Domain
         {
             Weapons.Add(weapon);
         }
+        public void AddShield(Shield shield)
+        {
+            Shields.Add(shield);
+        }
+        public void AddArmor(Armor armor) //
+        {
+            Armors.Add(armor);
+        }
+        public void AddItem(Items item) 
+        {
+            Items.Add(item);
+        }
 
-        public int GetInitiationvalue(Weapon weapon)
+        public int GetInitiationvalue(Weapon weapon) // át kell alakítani  mert a fegyverek és pajzsok különböző értékeket adnak a kezdeményezéshez
         {
             return Ke + weapon.Ke;
         }
-        public int GetAttackValue(Weapon weapon)
+        public int GetAttackValue(Weapon weapon) // át kell alakítani  mert a fegyverek és pajzsok különböző értékeket adnak a támadáshoz
         {
             return weapon switch
             {

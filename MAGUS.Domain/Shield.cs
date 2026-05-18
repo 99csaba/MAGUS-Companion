@@ -6,17 +6,19 @@ using System.Threading.Tasks;
 
 namespace MAGUS.Domain
 {
-    public class Shield 
+    public class Shield
     {
-        public int MGT {  get; private set; }
-        public int SFE {  get; private set; }
-        public string Material {  get; private set; }
-
-        public Shield(int mgt, int sfe, string material)
+        public int Ke { get; private set;  }
+        public int Ve { get; private set; }
+        public int MGT { get; private set; }
+        public int Attacks { get; private set; }
+        public Dice AttackDice = new Dice(1, 6); 
+        public Shield(int ke, int ve, int mgt, int attacks)
         {
+            Ke = ke;
+            Ve = ve;
             MGT = mgt;
-            SFE = sfe;
-            Material = material;
+            Attacks = attacks;
         }
     }
 }
