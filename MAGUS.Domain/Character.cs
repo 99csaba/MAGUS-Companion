@@ -5,8 +5,8 @@ namespace MAGUS.Domain
     public class Character
     {
         public string Name { get; private set; }
-        public int Level { get; private set; }
         public CharacherClass Kaszt { get; private set; }
+        public int Level { get; private set; }
         public int Ero { get; private set; }
         public int Gyorsasag { get; private set; }
         public int Ugyesseg { get; private set; }
