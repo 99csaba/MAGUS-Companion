@@ -109,18 +109,39 @@
                     <TextBlock Grid.Column="0" Grid.Row="1" Text="Max Fp" Margin="5" TextAlignment="Center"/>
                     <TextBlock Grid.Column="1" Grid.Row="1" Text="Akt. Fp" Margin="5" TextAlignment="Center"/>
                 </Grid>
+
+                <!-- Harcértékek-->
+                <!-- KÉ-->
+
+                <!-- TÉ-->
+
+                <!-- VÉ-->
+
+                <!-- CÉ-->
             </StackPanel>
-            <!-- Harcértékek-->
-            <!-- KÉ-->
+            <!-- Equipments -->
+            <StackPanel Grid.Column="2">
+                <TextBlock Text="Fegyverek" Margin="5"/>
+                <ListBox>
+                    <!-- Weapons -->
 
-            <!-- TÉ-->
+                </ListBox>
 
-            <!-- VÉ-->
-            
-            <!-- CÉ-->
+                <TextBlock Text="Pajzsok" Margin="5"/>
+                <ListBox>
+                    <!-- Shields -->
+
+                </ListBox>
+
+                <TextBlock Text="Páncélok" Margin="5"/>
+                <ListBox>
+                    <!-- Armor -->
+
+                </ListBox>
+            </StackPanel>
 
         </Grid>
-
+        
 
 
     </Grid>
