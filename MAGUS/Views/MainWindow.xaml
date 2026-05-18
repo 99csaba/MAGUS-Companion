@@ -1,0 +1,80 @@
+﻿<Window x:Class="MAGUS.Presentation.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:MAGUS.Presentation.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MAGUS.Presentation.ViewModels"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+
+    <Grid >
+        <Grid.Background>
+            <ImageBrush ImageSource="/Assets/Images/app_bg_1.jpg"></ImageBrush>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0" Margin="50">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Rectangle Grid.Row="0" Fill="Gold"/>
+
+            <TextBlock Grid.Row="0" Text="Kalandozók"
+                   Foreground="Black"
+                   FontSize="18"
+                   HorizontalAlignment="Center"/>
+
+            <ListBox x:Name="CharacterList" Grid.Row="1" BorderBrush="Black"
+                    ItemsSource="{Binding CharacterList}"
+                    SelectedItem="{Binding SelectedCharacter}">
+                <ListBox.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Color="#80493A25" Offset="0"/>
+                        <GradientStop Color="#80785A20" Offset="1"/>
+                    </LinearGradientBrush>
+                </ListBox.Background>
+
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal" Width="285">
+                            <TextBlock Text="{Binding Name}" Margin="6,0,10,0" />
+                            <TextBlock Text="{Binding Kaszt.ClassName}" Margin="40,0,20,0"/>
+                            <TextBlock Text="{Binding Level}" Margin="50,0,3,0" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Grid>
+
+        <Grid x:Name="ButtonPanel" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Button Content="Betöltés" Command="{Binding LoadCaracterCommand}" Margin="70,100,70,30" BorderThickness="1" BorderBrush="Gold">
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Color="#80493A25" Offset="0"/>
+                        <GradientStop Color="#80785A20" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+
+            <Button Grid.Row="1" Content="Új Karakter" Margin="70,30,70,100" BorderThickness="1" BorderBrush="Gold">
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Color="#80493A25" Offset="0"/>
+                        <GradientStop Color="#80785A20" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            
+        </Grid>
+    </Grid>
+</Window>

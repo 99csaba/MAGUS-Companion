@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="MAGUS.Applications/MAGUS.Applications.csproj" />
+  <Project Path="MAGUS.Domain/MAGUS.Domain.csproj" />
+  <Project Path="MAGUS.Infrastructure/MAGUS.Infrastructure.csproj" />
+  <Project Path="MAGUS.Tests/MAGUS.Tests.csproj" />
+  <Project Path="MAGUS/MAGUS.Presentation.csproj" />
+</Solution>
