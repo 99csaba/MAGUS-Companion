@@ -31,7 +31,7 @@
                 <TextBlock Text="Szint" Margin="5" TextAlignment="Center"/>
                 <TextBlock Text="{Binding Hero.Level}" Margin="5" TextAlignment="Center"/>
                 <TextBlock Text="Kaszt" Margin="5" TextAlignment="Center"/>
-                <TextBlock Text="{Binding Hero.CharacterClass.ClassName}" Margin="5" TextAlignment="Center"/>
+                <TextBlock Text="{Binding Hero.Kaszt.ClassName}" Margin="5" TextAlignment="Center"/>
             </StackPanel>
 
             <Grid Grid.Column="0" Grid.Row="1">
@@ -132,7 +132,6 @@
                     <TextBlock Text="{Binding Hero.Te}" Grid.Column="1" Grid.Row="1" TextAlignment="Center"/>
                     <TextBlock Text="{Binding Hero.Ve}" Grid.Column="2" Grid.Row="1" TextAlignment="Center"/>
                     <TextBlock Text="{Binding Hero.Ce}" Grid.Column="3" Grid.Row="1" TextAlignment="Center"/>
-
                 </Grid>
                 <!-- KÉ-->
 
@@ -145,20 +144,60 @@
             <!-- Equipments -->
             <StackPanel Grid.Column="2">
                 <TextBlock Text="Fegyverek" Margin="5"/>
-                <ListBox>
                     <!-- Weapons -->
+                <Grid Margin="10,0,10,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Column="0" Text="Név" Background="LightGray" />
+                    <TextBlock Grid.Column="1" Text="KÉ" Background="LightGray" Margin="20,0,0,0"/>
+                    <TextBlock Grid.Column="2" Text="TÉ/CÉ" Background="LightGray"/>
+                    <TextBlock Grid.Column="3" Text="VÉ/Táv" Background="LightGray"/>
+                    <TextBlock Grid.Column="4" Text="Sebzés" Background="LightGray"/>
+                    <TextBlock Grid.Column="5" Text="Tám/kör" Background="LightGray"/>
+
+                </Grid>
+                <ListBox Height="100" Margin="10,0,60,0"
+                    ItemsSource="{Binding Hero.Weapons}">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding Name}" Margin="0,0,15,0"/>
+                                <TextBlock Text="{Binding Ke}" Margin="0,0,15,0"/>
+                                <TextBlock Text="{Binding DisplayeAttack}" Margin="0,0,15,0"/>
+                                <TextBlock Text="{Binding DisplayDefenseOrRange}" Margin="0,0,15,0"/>
+                                <TextBlock Text="{Binding DamageToString}" Margin="0,0,15,0"/>
+                                <TextBlock Text="{Binding Attacks}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
 
                 </ListBox>
 
                 <TextBlock Text="Pajzsok" Margin="5"/>
-                <ListBox>
                     <!-- Shields -->
+                <ListBox Height="50" Margin="10,0,60,0"
+                    ItemsSource="{Binding Hero.Shields}">
 
                 </ListBox>
 
                 <TextBlock Text="Páncélok" Margin="5"/>
-                <ListBox>
                     <!-- Armor -->
+                <ListBox Height="50" Margin="10,0,60,0"
+                    ItemsSource="{Binding Hero.Armors}">
+
+                </ListBox>
+
+                <TextBlock Text="Képzettségek" Margin="5"/>
+                <!-- Képzettségek -->
+                <ListBox Height="50" Margin="10,0,60,0">
+
 
                 </ListBox>
             </StackPanel>
