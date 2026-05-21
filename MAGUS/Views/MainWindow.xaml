@@ -57,7 +57,7 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
-            <Button Content="Betöltés" Command="{Binding LoadCaracterCommand}" Margin="70,100,70,30" BorderThickness="1" BorderBrush="Gold">
+            <Button Content="Betöltés" Command="{Binding LoadCharacterCommand}" Margin="70,100,70,30" BorderThickness="1" BorderBrush="Gold">
                 <Button.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
                         <GradientStop Color="#80493A25" Offset="0"/>

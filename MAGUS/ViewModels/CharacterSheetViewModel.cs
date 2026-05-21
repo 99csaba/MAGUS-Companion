@@ -1,4 +1,5 @@
-﻿using MAGUS.Domain;
+﻿using MAGUS.Applications;
+using MAGUS.Domain;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -12,26 +13,20 @@ namespace MAGUS.Presentation.ViewModels
 {
     public class CharacterSheetViewModel : INotifyPropertyChanged
     {
+        private readonly CharacterService _characterService;
         public Character Hero { get; set; }
         public ObservableCollection<Weapon> Weapons { get; set; }
         public ObservableCollection<Shield> Shields { get; set; }
         public ObservableCollection<Armor> Armors { get; set; }
 
-        public CharacterSheetViewModel(Character hero)
+        public CharacterSheetViewModel(Character hero, CharacterService characterService)
         {
+            _characterService = characterService;
             Hero = hero;
             Weapons = new ObservableCollection<Weapon>(hero.Weapons);
             Shields = new ObservableCollection<Shield>(hero.Shields);
             Armors = new ObservableCollection<Armor>(hero.Armors);
         }
-
-        public CharacterSheetViewModel()
-        {
-            
-        }
-
-
-
 
         protected void OnPropertyChanged([CallerMemberName] string? name = null)
         {

@@ -13,7 +13,7 @@ namespace MAGUS.Domain
         public int Allokepesseg { get; private set; }
         public int Egeszseg { get; private set; }
         public int Szepseg { get; private set; }
-        public int Intelligencia { get; private set; }
+        public int Inteligencia { get; private set; }
         public int Akaratero { get; private set; }
         public int Asztral { get; private set; }
         public int Ke { get; private set; }
@@ -43,7 +43,7 @@ namespace MAGUS.Domain
             this.Allokepesseg = allo;
             this.Egeszseg = egesz;
             this.Szepseg = szep;
-            this.Intelligencia = intel;
+            this.Inteligencia = intel;
             this.Akaratero = akar;
             this.Asztral = aszt;
             this.Ke = ke;

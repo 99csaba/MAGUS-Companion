@@ -16,7 +16,7 @@ namespace MAGUS.Presentation.ViewModels
 {
     public class MainWindowViewModel : INotifyPropertyChanged
     {
-        public ICommand LoadCaracterCommand { get; }
+        public ICommand LoadCharacterCommand { get; }
 
         private ObservableCollection<Character> characterList;
         public ObservableCollection<Character> CharacterList { get => characterList; set { characterList = value; OnPropertyChanged(); } }
@@ -27,7 +27,7 @@ namespace MAGUS.Presentation.ViewModels
         public MainWindowViewModel()
         {
             CharacterList = BaseLoad();
-            LoadCaracterCommand = new RelayCommand(LoadCharacter);
+            LoadCharacterCommand = new RelayCommand(LoadCharacter);
         }
 
         private ObservableCollection<Character> BaseLoad()
@@ -55,8 +55,8 @@ namespace MAGUS.Presentation.ViewModels
         {
             if (SelectedCharacter != null)   
             {
-                var combatView = new CombatView(SelectedCharacter);
-                combatView.Show();
+               var view = new CharachterSheetWindow(SelectedCharacter);
+                view.Show();
             }
         }
         public void OpenCombat()
@@ -64,7 +64,7 @@ namespace MAGUS.Presentation.ViewModels
             var view = new CombatView(SelectedCharacter);
             view.Show();
         }
-
+        
         //---------------------------------------------------------------------------------------------------
         public event PropertyChangedEventHandler? PropertyChanged;
 

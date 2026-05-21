@@ -23,14 +23,12 @@ namespace MAGUS.Presentation.Views
         private const double AspectRatio = 16.0 / 9.0;
         private bool _isResizing = false;
 
-        //private readonly MainWindowViewModel vm;
         public MainWindow()
         {
             InitializeComponent();
             DataContext = new MainWindowViewModel();
             this.SizeChanged += MainWindow_SizeChanged;
         }
-            //vm = (MainWindowViewModel)DataContext;
         private void MainWindow_SizeChanged(object sender, SizeChangedEventArgs e)
         {
             if (_isResizing)

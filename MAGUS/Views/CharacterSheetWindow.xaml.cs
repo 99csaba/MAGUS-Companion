@@ -1,4 +1,5 @@
-﻿using MAGUS.Presentation.ViewModels;
+﻿using MAGUS.Domain;
+using MAGUS.Presentation.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,10 +21,10 @@ namespace MAGUS.Presentation.Views
     /// </summary>
     public partial class CharachterSheetWindow : Window
     {
-        public CharachterSheetWindow()
+        public CharachterSheetWindow(Character character)
         {
             InitializeComponent();
-            DataContext = new CharacterSheetViewModel();
+            DataContext = new CharacterSheetViewModel(character, new Applications.CharacterService());
         }
     }
 }
