@@ -133,13 +133,7 @@
                     <TextBlock Text="{Binding Hero.Ve}" Grid.Column="2" Grid.Row="1" TextAlignment="Center"/>
                     <TextBlock Text="{Binding Hero.Ce}" Grid.Column="3" Grid.Row="1" TextAlignment="Center"/>
                 </Grid>
-                <!-- KÉ-->
-
-                <!-- TÉ-->
-
-                <!-- VÉ-->
-
-                <!-- CÉ-->
+                <Button x:Name="Combat_btn" Command="{Binding Combat}" Content="Harc" Margin="10" Height="30"/>
             </StackPanel>
             <!-- Equipments -->
             <StackPanel Grid.Column="2">
